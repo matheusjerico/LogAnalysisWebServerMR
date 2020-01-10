@@ -1,6 +1,6 @@
 ## How use this?
 
-I am using VirtualBox with VM Cloudera Quickstart 5.13.0
+I am using VirtualBox with VM Cloudera Quickstart 5.13.0.
 
 ## Objective
 
@@ -22,9 +22,9 @@ The Common Log Format also is known as the *NCSA* Common log format. Each line i
 2. **User-identifier** is the RFC 1413 identity of the client; *missing data*
 3. **raj** is the user id of the person requesting the document; *missing data*
 4. **[15/Jul/2009:15:50:51 -0700]** is the date, time, and time zone that the request was received; 
-5. **“GET / HTTP/1.1”** is the request line from the client.
-6. **200** is the HTTP status code returned to the client.
-7. **9157** is the size of the object returned to the client, measured in bytes *missing or not*
+5. **“GET / HTTP/1.1”** is the request line from the client;
+6. **200** is the HTTP status code returned to the client;
+7. **9157** is the size of the object returned to the client, measured in bytes. *missing or not*
 
 A “–” in a field indicates missing data.
 
