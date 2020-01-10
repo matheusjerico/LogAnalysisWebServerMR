@@ -30,11 +30,69 @@ A “–” in a field indicates missing data.
 
 ## Usage
 
-Create directory in hdfs for move dataset:
+Create directory in hdfs for move dataset and check:
 ``` bash
 $ hdfs dfs -mkdir /mapred
+$ hdfs dfs -ls /
+```
+Create directory in local for script and dataset:
+``` bash
+$ mkdir mr-web-server-log; mr-web-server-log/mkdir dataset;
+```
+Unzip dataset:
+``` bash
+$ cd mr-web-server-log; unzip web_server.lob.zip; cd ..
+```
+Move dataset to hdfs in directory /mapred:
+``` bash
+$ hdfs dfs -put web_server.log /mapred
 ```
 
+Create mapper.py:
+``` python
+#!/usr/bin/env python
+import sys
+
+for line in sys.stdin:
+    data = line.strip().split(" ")
+    if len(data) == 10:
+        ip, id, authuser, datetime, timezone, method, path, proto, status, size = data
+        print ip
+```
+Create reducer.py:
+``` python
+#!/usr/bin/env python
+
+import sys
+
+current_ip_count = 0
+current_ip = None
+
+
+for line in sys.stdin:
+    new_ip = line.strip().split()
+    if len(new_ip) != 1:
+        continue
+
+    if current_ip and current_ip != new_ip:
+        print "{0}\t{1}".format(current_ip, current_ip_count)
+        current_ip_count = 0
+
+    current_ip = new_ip
+    current_ip_count += 1
+
+if current_ip != None:
+    print "{0}\t{1}".format(current_ip, current_ip_count)
+```
+
+Change files permission
+``` bash
+$ chmod 777 mapper.py; chmod 777 reducer.py
+```
+Execute map reduce:
+```bash
+$ hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.6.0-mr1-cdh5.13.0.jar -file mapper.py -mapper mapper.py -file reducer.py -reducer reducer.py -input /mapred/web_server.log -output /output
+```
 ## Author
 
 [Matheus Jericó](http://linkedin.com/in/matheusjerico)
