@@ -2,7 +2,7 @@
 
 I am using VirtualBox with VM Cloudera Quickstart 5.13.0
 
-## Objetive
+## Objective
 
 Find out how many connections by IP.
 
