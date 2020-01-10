@@ -26,12 +26,14 @@ Ex: 10.223.157.186 - - [15/Jul/2009:15:50:51 -0700] "GET / HTTP/1.1" 200 9157
 
 A “–” in a field indicates missing data.
 
-
-## Usage
-
 ## Dataset
 
 ## Usage
+
+1. Create directory in hdfs for move dataset
+``` bash
+$ hdfs dfs -mkdir /mapred
+```
 
 ## Author
 
