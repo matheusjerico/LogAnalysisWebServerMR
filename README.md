@@ -37,7 +37,7 @@ $ hdfs dfs -ls /
 ```
 Create directory in local for script and dataset:
 ``` bash
-$ mkdir mr-web-server-log; mr-web-server-log/mkdir dataset;
+$ mkdir mr-web-server-log; mr-web-server-log; mkdir dataset;
 ```
 Unzip dataset:
 ``` bash
