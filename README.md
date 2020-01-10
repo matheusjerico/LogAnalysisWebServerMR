@@ -12,11 +12,9 @@ Log files are a standard tool for computer systems developers and administrators
 
 ## Log format
 
-The Common Log Format also is known as the *NCSA* Common log format. Each line in a file stored has the following syntax:
+The Common Log Format also is known as the *NCSA* Common log format. Each line in a file stored has the following syntax: **[host; ident; authuser; date; request; status; bytes]**
 
-**[host; ident; authuser; date; request; status; bytes]**
-
-10.223.157.186 - - [15/Jul/2009:15:50:51 -0700] "GET / HTTP/1.1" 200 9157
+Ex: 10.223.157.186 - - [15/Jul/2009:15:50:51 -0700] "GET / HTTP/1.1" 200 9157
 
 1. **10.223.157.186** is the IP address of the client (remote host);
 2. **User-identifier** is the RFC 1413 identity of the client; ***missing data***
