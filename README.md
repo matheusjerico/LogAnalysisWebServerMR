@@ -14,7 +14,8 @@ Log files are a standard tool for computer systems developers and administrators
 
 The Common Log Format also is known as the *NCSA* Common log format. Each line in a file stored has the following syntax:
 
-*[host; ident; authuser; date; request; status; bytes]*
+***[host; ident; authuser; date; request; status; bytes]***
+
 Ex: 10.223.157.186 - - [15/Jul/2009:15:50:51 -0700] "GET / HTTP/1.1" 200 9157
 
 A “–” in a field indicates missing data.
