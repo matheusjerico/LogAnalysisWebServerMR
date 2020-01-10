@@ -16,8 +16,6 @@ The Common Log Format also is known as the *NCSA* Common log format. Each line i
 
 **[host; ident; authuser; date; request; status; bytes]**
 
-Ex: 
-
 10.223.157.186 - - [15/Jul/2009:15:50:51 -0700] "GET / HTTP/1.1" 200 9157
 
 1. **10.223.157.186** is the IP address of the client (remote host);
