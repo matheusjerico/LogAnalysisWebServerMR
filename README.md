@@ -28,6 +28,8 @@ A “–” in a field indicates missing data.
 
 ## Dataset
 
+./dataset/web_server.log
+
 ## Usage
 
 Create directory in hdfs for move dataset and check:
