@@ -30,7 +30,7 @@ A “–” in a field indicates missing data.
 
 ## Usage
 
-Create directory in hdfs for move dataset
+Create directory in hdfs for move dataset:
 ``` bash
 $ hdfs dfs -mkdir /mapred
 ```
