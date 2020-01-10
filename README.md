@@ -19,7 +19,7 @@ The Common Log Format also is known as the *NCSA* Common log format. Each line i
 10.223.157.186 - - [15/Jul/2009:15:50:51 -0700] "GET / HTTP/1.1" 200 9157
 
 1. host: 
-  **10.223.157.186** is the IP address of the client (remote host);
+- **10.223.157.186** is the IP address of the client (remote host);
 2. **ident: User-identifier** is the RFC 1413 identity of the client; ***missing data***
 3. **authuser: raj** is the user id of the person requesting the document; ***missing data***
 4. **date: [15/Jul/2009:15:50:51 -0700]** is the date, time, and time zone that the request was received; 
