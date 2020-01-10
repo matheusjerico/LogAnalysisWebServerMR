@@ -35,17 +35,18 @@ Create directory in hdfs for move dataset and check:
 $ hdfs dfs -mkdir /mapred
 $ hdfs dfs -ls /
 ```
-Create directory in local for script and dataset:
+Create directory in local for dataset:
 ``` bash
-$ mkdir mr-web-server-log; mr-web-server-log; mkdir dataset;
+$ mkdir dataset;
 ```
 Unzip dataset:
 ``` bash
-$ cd mr-web-server-log; unzip web_server.lob.zip; cd ..
+$ cd dataset; unzip web_server.lob.zip
 ```
 Move dataset to hdfs in directory /mapred:
 ``` bash
 $ hdfs dfs -put web_server.log /mapred
+$ cd ..
 ```
 
 Create mapper.py:
@@ -59,6 +60,7 @@ for line in sys.stdin:
         ip, id, authuser, datetime, timezone, method, path, proto, status, size = data
         print ip
 ```
+
 Create reducer.py:
 ``` python
 #!/usr/bin/env python
